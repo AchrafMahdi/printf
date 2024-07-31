@@ -1,19 +1,20 @@
-#include <stdarg.h>
 #include "main.h"
 
 /**
- * _printf - function that produces output according to a format.
- * @format: a character string.
- *
- * Return: number of characters printed.
- */
+* _printf - function that produces output according to a format.
+* @format: a character string.
+*
+* Return: number of characters printed.
+*/
 int _printf(const char *format, ...)
 {
 va_list args;
 unsigned int i = 0;
 int num = 0;
+
 va_start(args, format);
-while (format[i] != '\0')
+
+while (format && format[i] != '\0')
 {
 if (format[i] == '%')
 {
@@ -21,14 +22,12 @@ i++;
 switch (format[i])
 {
 case 'c':
-printChar(args);
+_putchar(va_arg(args, int));
 num++;
 break;
 case 's':
-{
 num += printString(args);
 break;
-}
 case '%':
 _putchar('%');
 num++;
@@ -47,5 +46,8 @@ num++;
 }
 i++;
 }
-va_end(args), return (num);
+
+va_end(args);
+
+return (num);
 }

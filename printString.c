@@ -11,6 +11,10 @@ int printString(va_list values)
 char *str;
 int i, length;
 str = va_arg(values, char *);
+if (!str)
+{
+str = "(null)";
+}
 length = _strlen(str);
 for (i = 0; i < length; i++)
 {
