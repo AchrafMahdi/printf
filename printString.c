@@ -2,7 +2,7 @@
 
 /**
  * printString - print a string using _putchar.
- * @val: The string to print.
+ * @values: The string to print.
  *
  * Return: length of string.
  */

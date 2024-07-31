@@ -25,7 +25,7 @@ printChar(args);
 num++;
 break;
 case 's':
-{                    
+{
 num += printString(args);
 break;
 }
