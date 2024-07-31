@@ -46,7 +46,8 @@ break;
 }
 }
 else
-        _putchar(format[i]), num++;
+	_putchar(format[i]), num++;
 }
 va_end(args), return (num);
 }
+
