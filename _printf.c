@@ -9,48 +9,43 @@
  */
 int _printf(const char *format, ...)
 {
-    va_list args;
-    unsigned int i = 0;
-    int num = 0;
-
-    va_start(args, format);
-
-    while (format[i] != '\0')
-    {
-        if (format[i] == '%')
-        {
-            i++;
-            switch (format[i])
-            {
-                case 'c':
-                    printChar(args);
-                    num++;
-                    break;
-                case 's':
-                {                    
-                    num += printString(args);
-                    break;
-                }
-                case '%':
-                    _putchar('%');
-                    num++;
-                    break;
-                default:
-                    _putchar('%');
-                    _putchar(format[i]);
-                    num += 2;
-                    break;
-            }
-        }
-        else
-        {
-            _putchar(format[i]);
-            num++;
-        }
-        i++;
-    }
-
-    va_end(args);
-
-    return num;
+va_list args;
+unsigned int i = 0;
+int num = 0;
+va_start(args, format);
+while (format[i] != '\0')
+{
+if (format[i] == '%')
+{
+i++;
+switch (format[i])
+{
+case 'c':
+printChar(args);
+num++;
+break;
+case 's':
+{                    
+num += printString(args);
+break;
+}
+case '%':
+_putchar('%');
+num++;
+break;
+default:
+_putchar('%');
+_putchar(format[i]);
+num += 2;
+break;
+}
+}
+else
+{
+_putchar(format[i]);
+num++;
+}
+i++;
+}
+va_end(args), return (num);
 }
