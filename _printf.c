@@ -32,6 +32,18 @@ case '%':
 _putchar('%');
 num++;
 break;
+case 'd':
+case 'i':
+{
+int n = va_arg(args, int);
+if (n < 0) {
+_putchar('-');
+n = -n;
+num++;
+}
+num += printNumber(n);
+break;
+}
 default:
 _putchar('%');
 _putchar(format[i]);
