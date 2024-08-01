@@ -21,11 +21,11 @@ return (1);
 while (n > 0)
 {
 if (n % 2)
-binary[i + 1] = '1';
+binary[i++] = '1';
 else
-binary[i + 1] = '0';
+binary[i++] = '0';
 
-n = n / 2;
+n /= 2;
 }
 
 while (i-- > 0)
