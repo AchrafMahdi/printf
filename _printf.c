@@ -47,6 +47,9 @@ num++;
 num += printNumber(n);
 break;
 }
+case 'b':
+num += printBinary(va_arg(args, unsigned int));
+break;
 default:
 _putchar('%');
 _putchar(format[i]);
